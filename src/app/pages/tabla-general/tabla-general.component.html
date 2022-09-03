@@ -1,0 +1,75 @@
+<div class="contenedor" *ngIf="loading">
+  <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<div *ngIf="!loading">
+  <h1>Tabla general</h1>
+  <div class="card border" style="width: 100%;">
+    <div class="card-body">
+      <div class="contenido-tabla">
+        <div class="table-responsive">
+          <table class="table table-bordered table-fixed table-striped">
+            <thead class="cabecera text-center">
+              <tr>
+                <th scope="col" data-toggle="tooltip" title="Fecha del reporte web">Fecha del reporte web</th>
+                <th scope="col" data-toggle="tooltip" title="ID del caso">ID del caso</th>
+                <th scope="col" data-toggle="tooltip" title="Fecha de notificación">Fecha de notificación</th>
+                <th scope="col" data-toggle="tooltip" title="Nombre del departamento">Departamento</th>
+                <th scope="col" data-toggle="tooltip" title="Nombre del municipio">Municipio</th>
+                <th scope="col" data-toggle="tooltip" title="Edad">Edad</th>
+                <th scope="col" data-toggle="tooltip" title="Unidad de medidad de edad">Unidad de medida</th>
+                <th scope="col" data-toggle="tooltip" title="Sexo">Sexo</th>
+                <th scope="col" data-toggle="tooltip" title="Tipo de contagio">Tipo de contagio</th>
+                <th scope="col" data-toggle="tooltip" title="Ubicación del caso">Ubicación del caso</th>
+                <th scope="col" data-toggle="tooltip" title="Estado">Estado</th>
+                <th scope="col" data-toggle="tooltip" title="Recuperado">Recuperado</th>
+                <th scope="col" data-toggle="tooltip" title="Fecha inicio de síntomas">Fecha inicio de síntomas</th>
+                <th scope="col" data-toggle="tooltip" title="Fecha de muerte">Fecha de muerte</th>
+                <th scope="col" data-toggle="tooltip" title="Fecha de diagnóstico">Fecha de diagnóstico</th>
+                <th scope="col" data-toggle="tooltip" title="Fecha de recuperación">Fecha de recuperación</th>
+                <th scope="col" data-toggle="tooltip" title="Tipo de recuperación">Tipo de recuperación</th>
+                <th scope="col" data-toggle="tooltip" title="Nombre del grupo étnico">Grupo étnico</th>
+
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <tr *ngFor="let item of listPacientes">
+                <td data-toggle="tooltip" title="{{item.fecha_reporte_web}}">{{item.fecha_reporte_web}}</td>
+                <td data-toggle="tooltip" title="{{item.id_de_caso}}">{{item.id_de_caso}}</td>
+                <td data-toggle="tooltip" title="{{item.fecha_de_notificaci_n}}">{{item.fecha_de_notificaci_n}}</td>
+                <td data-toggle="tooltip" title="{{item.departamento_nom}}">{{item.departamento_nom}}</td>
+                <td data-toggle="tooltip" title="{{item.ciudad_municipio_nom}}">{{item.ciudad_municipio_nom}}</td>
+                <td data-toggle="tooltip" title="{{item.edad}}">{{item.edad}}</td>
+                <td data-toggle="tooltip" title="{{item.unidad_medida}}">{{item.unidad_medida}}</td>
+                <td data-toggle="tooltip" title="{{item.sexo}}">{{item.sexo}}</td>
+                <td data-toggle="tooltip" title="{{item.fuente_tipo_contagio}}">{{item.fuente_tipo_contagio}}
+                </td>
+                <td data-toggle="tooltip" title="{{item.ubicacion}}">{{item.ubicacion}}</td>
+                <td data-toggle="tooltip" title="{{item.estado}}">{{item.estado}}</td>
+                <td data-toggle="tooltip" title="{{item.recuperado}}">{{item.recuperado}}</td>
+                <td data-toggle="tooltip" title="{{item.fecha_inicio_sintomas}}">{{item.fecha_inicio_sintomas}}</td>
+                <td data-toggle="tooltip" title="{{item.fecha_muerte}}">{{item.fecha_muerte}}</td>
+                <td data-toggle="tooltip" title="{{item.fecha_diagnostico}}">{{item.fecha_diagnostico}}</td>
+                <td data-toggle="tooltip" title="{{item.fecha_recuperado}}">{{item.fecha_recuperado}}</td>
+                <td data-toggle="tooltip" title="{{item.tipo_recuperacion}}">{{item.tipo_recuperacion}}</td>
+                <td data-toggle="tooltip" title="{{item.nom_grupo_}}">{{item.nom_grupo_}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <div class="debajo">
+        <div class="botones">
+          <button class="btn" [disabled]="!visibleAtras"(click)="atras()"><i class="bi bi-arrow-left"></i> Anterior</button>
+          <button class="btn" (click)="siguiente()">Siguiente <i class="bi bi-arrow-right"></i></button>
+        </div>
+        <div class="label-datos">
+          <label>Mostrando {{inicio}} - {{final}} de {{totalPacientes.length}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

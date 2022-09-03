@@ -1,0 +1,108 @@
+.contenedor{
+  //background: red;
+  height: 90vh;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  height: 550px;
+  padding-bottom: 10px;
+}
+
+.card-body{
+  //overflow:hidden;
+  /* width: 100%; */
+
+  /* background-color: darkgray; */
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+}
+
+.cabecera{
+  background: #712cf9;
+  color: #ffff;
+}
+
+
+.table-fixed{
+  width: 3700px;
+}
+
+.debajo{
+  background: #dee2e6;
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 4px;
+  justify-content: space-between;
+
+
+  button{
+    margin-left: 5px;
+    background: #712cf9;
+    color: #ffff;
+  }
+
+  .label-datos{
+    margin: auto 0;
+    margin-right: 5px;
+  }
+
+}
+// .botones{
+//   margin-top: 10px;
+
+//   button{
+//     margin-left: 5px;
+//   }
+// }
+@media only screen and (max-width: 520px) {
+  .debajo{
+    //background: rebeccapurple;
+    background: #dee2e6;
+
+    button{
+      font-size: 70%;
+    }
+
+    .label-datos{
+      font-size: 90%;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 450px) {
+  .debajo{
+    //background: red;
+
+    button{
+      font-size: 60%;
+    }
+
+    .label-datos{
+      font-size: 70%;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 350px) {
+  .debajo{
+    //background: red;
+
+    button{
+      font-size: 42%;
+    }
+
+    .label-datos{
+      font-size: 50%;
+    }
+  }
+
+}

@@ -1,0 +1,135 @@
+<div class="contenedor" *ngIf="loading">
+  <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+
+<div *ngIf="!loading">
+  <h1>Graficas</h1>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <div class="col">
+      <div class="card chart">
+        <div class="card-header">Género</div>
+        <div class="card-body">
+          <canvas id="genero"></canvas>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Hombres: {{porcMasculino.toFixed(2)}}%</li>
+          <li class="list-group-item">Mujeres: {{porcFemenino.toFixed(2)}}%</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card chart">
+        <div class="card-header">Tipo de contagio</div>
+        <div class="card-body">
+          <canvas id="tipocontagio"></canvas>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Comunitario: {{porcComunitario.toFixed(2)}}%</li>
+          <li class="list-group-item">Importado: {{porcImportado.toFixed(2)}}%</li>
+          <li class="list-group-item">Relacionado: {{porcRelacionado.toFixed(2)}}%</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card chart">
+        <div class="card-header">Recuperados</div>
+        <div class="card-body">
+          <canvas id="recuperado"></canvas>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Muertos: {{porcMuerto.toFixed(2)}}%</li>
+          <li class="list-group-item">Recuperados: {{porcRecuperado.toFixed(2)}}%</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card chart">
+        <div class="card-header">Tipo de recuperacion</div>
+        <div class="card-body">
+          <canvas id="tiporecuperacion"></canvas>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">PCR: {{porcPCR.toFixed(2)}}%</li>
+          <li class="list-group-item">No recuperado: {{porcNoRecuperado.toFixed(2)}}%</li>
+          <li class="list-group-item">Tiempo: {{porcTiempo.toFixed(2)}}%</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card chart">
+        <div class="card-header">Extranjeros</div>
+        <div class="card-body">
+          <canvas id="extranjeros"></canvas>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Extranjeros: {{porcExtranjero.toFixed(2)}}%</li>
+          <li class="list-group-item">Nacionales: {{porcNacional.toFixed(2)}}%</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card chart">
+        <div class="card-header">Rango de edades</div>
+        <div class="card-body">
+          <canvas id="edades"></canvas>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">0 - 11 años: {{porcPe.toFixed(2)}}%</li>
+          <li class="list-group-item">12 - 26 años: {{porcSe.toFixed(2)}}%</li>
+          <li class="list-group-item">27 - 59 años: {{porcTe.toFixed(2)}}%</li>
+          <li class="list-group-item">60 años en adelante: {{porcCe.toFixed(2)}}%</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card chart">
+        <div class="card-header">Estado</div>
+        <div class="card-body">
+          <canvas id="estados"></canvas>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Fallecido: {{porcFallecido.toFixed(2)}}%</li>
+          <li class="list-group-item">Grave: {{porcGrave.toFixed(2)}}%</li>
+          <li class="list-group-item">Leve: {{porcLeve.toFixed(2)}}%</li>
+          <li class="list-group-item">Moderado: {{porcModerado.toFixed(2)}}%</li>
+          <li class="list-group-item">N/A: {{porcNA.toFixed(2)}}%</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card chart">
+        <div class="card-header">Ubicación del caso</div>
+        <div class="card-body">
+          <canvas id="ubicacion"></canvas>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Casa: {{porcCasa.toFixed(2)}}%</li>
+          <li class="list-group-item">Fallecido: {{porcFado.toFixed(2)}}%</li>
+          <li class="list-group-item">Hospital: {{porcHospital.toFixed(2)}}%</li>
+          <li class="list-group-item">Hospital UCI: {{porcUCI.toFixed(2)}}%</li>
+          <li class="list-group-item">N/A: {{porcUbiNA.toFixed(2)}}%</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bar-chart">
+    <div class="card barc">
+      <div class="card-header">Distritos</div>
+      <div class="card-body">
+        <canvas id="distritos"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,36 @@
+.contenedor{
+  //background: red;
+  height: 90vh;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar-chart{
+  margin-top: 30px;
+}
+
+.chart{
+  height: 100%;
+}
+
+.barc{
+  max-width: 100%;
+}
+
+#distritos{
+  max-height: 500px;
+  max-width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+  .chart{
+    width: 100%;
+  }
+
+  .bar-chart{
+    width: 100%;
+  }
+
+}

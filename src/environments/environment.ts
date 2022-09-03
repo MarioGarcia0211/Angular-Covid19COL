@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  url: 'https://www.datos.gov.co/resource/gt2j-8ykr.json'
 };
 
 /*
